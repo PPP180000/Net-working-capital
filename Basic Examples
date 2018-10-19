@@ -1,0 +1,156 @@
+#example 1
+# To find Net Working Capital of Saddle Creek,Inc.
+#current assets and liabilities of 2008 
+Current_assets_2008 = 1240.00
+Current_assets_2009 = 1660.00
+#curren assets and liabilities of 2009
+Current_liabilities_2008 = 820.00
+Current_liabilities_2009 = 1180.00
+#to find MWC we will take a difference of the assets and liabilities of both years
+NWC = (Current_assets_2009-Current_liabilities_2009)-(Current_assets_2008-Current_liabilities_2008)
+print(f"Answer 1: Net Working Capital is { NWC:1.2f}")
+
+#example 2
+# To find the cash flow to creditors during 2009 of Maria's Tennis Shop
+#Here are the variables
+Long_term_debt_2008 = 2600000
+Long_term_debt_2009 = 3900000
+Interest_Expenses_2009 =  270000
+# cash flow to creditors
+CF_creditors = Interest_Expenses_2009 - (Long_term_debt_2009-Long_term_debt_2008)
+#print the amount of cash flow to creditors 
+print(f"Answer 2: Cash flow to creditors is {CF_creditors:1.2f}")
+
+
+#example 3
+#To find the cash flow to stockholder of Maria's Tennis Shop
+#Here are the variables
+Common_stock_account_2008 = 930000
+Common_stock_account_2009 = 955000
+surplus_account_2008 = 6600000
+surplus_account_2009 = 8650000
+Paid_out_cash_dividends_2009 = 530000
+CF_stockholder = Paid_out_cash_dividends_2009-(surplus_account_2009-surplus_account_2008)-(Common_stock_account_2009-Common_stock_account_2008)
+print(f"Answer 3: Cash flow to stockholder is {CF_stockholder:1.2f}")
+
+
+#example 4
+# To find the operating cash flow of the Maria's Tennis Shop
+#Here are the variables
+long_term_debt_2008 = 2700000
+common_stock_2008 = 730000
+surplus_2008 = 6050000
+long_term_debt_2009 = 4250000
+common_stock_2009 = 955000
+surplus_2009 =8650000
+interest_expenses_2009 = 180000
+cash_dividends_2009 = 650000
+net_spending_2009 = 860000
+Reduced_NWC_2009 = 165000
+# To find the cash flow to creditors
+CF_creditors = interest_expenses_2009 -(long_term_debt_2009-long_term_debt_2008)
+# To find the cash flow to stockholder
+CF_stockhol = cash_dividends_2009 - (common_stock_2009-common_stock_2008)-(surplus_2009-surplus_2008)
+# operating cash flow 
+OCF = CF_stockhol + CF_creditors -Reduced_NWC_2009 + net_spending_2009
+print(f"Answer 4: Operating cash flow is{OCF:1.2f}" )
+
+
+
+#example 5
+#To find the common stock for Bertinelli Corp.
+# Here are the variables of the company
+cash = 390000
+patents_copyrights = 690000
+accounts_payable = 340000
+accounts_receivable = 139000
+tangible_net_fixed_assets = 4700000
+inventory = 205000
+notes_payable = 170000
+accumulated_retained_earnings = 1335000
+long_term_debt = 1830000
+# this formula help us to find the assets
+assets = cash + patents_copyrights + accounts_receivable + tangible_net_fixed_assets + inventory
+# this formula will help us to find the liabilities
+liabilities = accounts_payable + notes_payable + long_term_debt
+# net assets formula
+net_assets = assets - liabilities
+# common stock formula
+common_stock = net_assets - accumulated_retained_earnings
+print(f"Answer 5: The common stock is {common_stock:1.2f}")
+
+
+
+# TVM  Examples
+# Example 1a
+# In 1895, sporting event held
+winner_prize_1895 = 120
+# In 2007, again the same sporting event held
+winner_prize_2007 = 1179000
+# total duration between that event
+duration = 2007 - 1895
+# To find the percentage increase of the winner prize per year
+per_increase = (((winner_prize_2007 / winner_prize_1895) ** (1 / duration)) - 1) * 100
+print(f"Answer 1(a): The percentage increase of winner prize over the period is {per_increase:1.2f} %")
+
+# Example 1b
+# To find the 2040's winner prize with the same increase rate
+# period duration
+period_dur = 2040 -2007
+winner_prize_2040 = winner_prize_2007 * ((1 +(per_increase / 100 )) ** period_dur)
+print(f"Answer 1(b): The winner prize in 2040 will be {winner_prize_2040:1.2f} $") 
+
+#Example 2
+# A sculpture was purchased in 1999
+price_scul_1999 = 12385500
+#During 2003 a sculpture was sold at auction for a price of 10,305,500
+price_scul_2003 = 10305500
+#duration of that period
+dur = 2003 - 1999
+#Annual rate of return 
+ann_rr = (((price_scul_2003 / price_scul_1999) ** (1 / dur )) - 1 ) * 100
+print(f"Answer 2: The annual rate of return for the sculpture price is {ann_rr:1.2f} %")
+
+#Example 3a
+#The first installment after the retirement is 2000$
+fir_con = 2000
+# annual rate is 10% 
+ann_rr = 10
+#The amount after 35 years of the first installment
+am_35 = fir_con * (( 1 +( ann_rr / 100) ) ** 35)
+print(f"Answer 3a: Total amount after 35 years will be {am_35:1.2f}$")
+
+#Example 3b
+#If you wait for 7 years to contribute than the amount will be 
+# Duration will be 28 years
+am_28 = fir_con * (( 1 +( ann_rr / 100) ) ** 28)
+print(f"Answer 3b: Total amount after 28 years will be {am_28:1.2f}$")
+
+#Example 4
+#The investment after 2 years of 29000$ 
+am = 29000
+#interest rate of 5 percent annualy
+ann_rr = 5
+#Duration of the investment is 8 years
+am_8 = am * (( 1 + ann_rr / 100)) ** 8
+print(f"Answer 4: The amount after 10 years will be {am_8:1.2f}$")
+
+#Example 5
+#The receivable amount is 8000$ after within 2 years
+import math
+am = 8000
+#interest rate is 12 %
+int = 12
+#Future amount after the investment is 95000$
+am_futur = 95000
+# To find the number of years to wait from now is 
+# To find future value divide by present value
+ratio = am_futur / am
+# Lets assume p is 1 + interest
+p = (1 + (int / 100))
+years =  (math.log10(ratio) / math.log10(p)) + 2
+print(f"Answer 5: The number of years will be {years:1.2f}")
+
+
+
+ 
